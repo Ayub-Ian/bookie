@@ -1,10 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import GoogleLogo from "@/components/shared/icons/google";
-import { Loader } from "lucide-react";
+import { NavLink } from "@/lib/router-events";
+import LoginForm from "@/components/auth/login-form";
 
 export default function LoginPage() {
   return (
@@ -13,40 +11,8 @@ export default function LoginPage() {
         Sign in to your account
       </h2>
       <div className="mt-10 w-full sm:mx-auto">
-        <form className="space-y-6" method="post">
-          <div>
-            <Label htmlFor="email">Email address</Label>
-            <div className="mt-2">
-              <Input
-                placeholder="michael@scott.com"
-                id="email"
-                type="email"
-                autoComplete="email"
-                className="text-base md:text-sm"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="password">Password</Label>
-            </div>
-            <div className="mt-2">
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                autoComplete="current-password"
-                className="text-base md:text-sm"
-              />
-            </div>
-          </div>
-
-          <Button className="w-full text-base md:text-sm" type="submit">
-            <Loader className="mr-2 h-4 w-4 animate-spin" />
-            Sign in
-          </Button>
-        </form>
+      
+      <LoginForm />
 
         <div className="my-6">
           <div className="relative flex items-center">
@@ -68,17 +34,17 @@ export default function LoginPage() {
         <div className="mt-5 flex items-center justify-between">
           <p className="flex-grow text-sm text-muted-foreground">
             Not a member?{" "}
-            <Link href="/signup">
+            <NavLink href="/signup">
               <Button size="md" variant="link" className="px-1">
                 Sign up
               </Button>
-            </Link>
+            </NavLink>
           </p>
-          <Link href="/forgot-password">
+          <NavLink href="/forgot-password">
             <Button variant="link" size="md">
               Forgot Password
             </Button>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </>

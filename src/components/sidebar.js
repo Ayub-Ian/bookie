@@ -4,7 +4,7 @@ import { CalendarDaysIcon, Clock3Icon, LayersIcon, LinkIcon } from "lucide-react
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/lib/router-events";
-import { SidebarContext } from "@/app/context/sidebar-links";
+import { SidebarContext } from "@/context/sidebar-links";
 import { Logo } from "./shared/icons/logo";
 import { usePathname } from "next/navigation"
 import { Calendar } from "@/components/ui/calendar"

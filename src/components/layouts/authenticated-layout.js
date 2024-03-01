@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 // import { UserNav } from "./user-nav"
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Sidebar } from "@/components/sidebar";
-import { SidebarContext } from "@/app/context/sidebar-links";
+import { SidebarContext } from "@/context/sidebar-links";
 
 export default function AuthenticatedClientLayout({ children }) {
   const [hamMenuOpen, setHamMenuOpen] = useState(false);

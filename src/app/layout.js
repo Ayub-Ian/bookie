@@ -1,6 +1,8 @@
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { HandleOnComplete } from '@/lib/router-events'
+import { Toaster } from "@/components/ui/sonner"
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system"  enableSystem disableTransitionOnChange>
         {children}
         <HandleOnComplete />
+        <Toaster />
         </ThemeProvider>
         </body>
     </html>
