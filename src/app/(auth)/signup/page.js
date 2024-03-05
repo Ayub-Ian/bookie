@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import GoogleLogo from "@/components/shared/icons/google";
 import Link from "next/link";
 import { NavLink } from "@/lib/router-events";
-import SignupForm from "@/components/auth/signup-form";
+import SignupForm from "@/components/auth/form/signup";
 
 
 export default function SignUpPage() {

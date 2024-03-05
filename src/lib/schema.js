@@ -23,3 +23,20 @@ export const signUpSchema = yup.object().shape({
       .matches(/[Link-z]/, getCharacterValidationError("lowercase"))
       .matches(/[A-Z]/, getCharacterValidationError("uppercase")),
   });
+
+  export const emailSchema = yup.object().shape({
+    email: yup.string().email("Invalid email").required("Field is required"),
+  });
+
+
+  export const updatePasswordSchema = yup.object().shape({
+    password: yup.string()
+      .required("Password is required")
+      .min(4, "Password length should be at least 4 characters")
+      .max(12, "Password cannot exceed more than 12 characters"),
+    cpassword: yup.string()
+      .required("Confirm Password is required")
+      .min(4, "Password length should be at least 4 characters")
+      .max(12, "Password cannot exceed more than 12 characters")
+      .oneOf([yup.ref("password")], "Passwords do not match")
+  });

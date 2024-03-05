@@ -16,8 +16,16 @@ export async function middleware(req) {
 
   // if user is not signed in and the current path is not / redirect the user to /login
   if (!user && req.nextUrl.pathname !== '/') {
+
+     // Exception f user is trying to reset password allow auth session
+      if (req.nextUrl.pathname === '/update-password') {
+        return res
+      }
+    
     return NextResponse.redirect(new URL('/login', req.url))
   }
+
+ 
 
    // if user is signed in and doesn't have `onboardingComplete: true`, redirect them to the /welcome
 //    if (user &&  !== '/') {
@@ -28,5 +36,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ['/', '/bookings/(.*)', '/calendar/(.*)', '/event-types/(.*)','/availability/(.*)', '/update-password'],
+  matcher: ['/', '/bookings/(.*)', '/calendar/(.*)', '/event-types/(.*)','/availability/(.*)'],
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import GoogleLogo from "@/components/shared/icons/google";
 import { NavLink } from "@/lib/router-events";
-import LoginForm from "@/components/auth/login-form";
+import LoginForm from "@/components/auth/form/login";
 
 export default function LoginPage() {
   return (
