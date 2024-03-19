@@ -12,9 +12,13 @@ export default async function AuthenticatedLayout({ children }) {
     redirect("/login");
   }
 
+  if (!data?.session.user.user_metadata.onboardingComplete) {
+    redirect("/welcome");
+  }
+
   return (
     <>
-      <AuthenticatedClientLayout>{children}</AuthenticatedClientLayout>
+      <AuthenticatedClientLayout data={data} >{children}</AuthenticatedClientLayout>
     </>
   );
 }

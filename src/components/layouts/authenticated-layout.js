@@ -9,13 +9,15 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Sidebar } from "@/components/sidebar";
 import { SidebarContext } from "@/context/sidebar-links";
+import { UserNav } from "../user-nav";
 
-export default function AuthenticatedClientLayout({ children }) {
+export default function AuthenticatedClientLayout({ children, data }) {
   const [hamMenuOpen, setHamMenuOpen] = useState(false);
 
   const closeHamMenu = () => {
     setHamMenuOpen(false);
   };
+
   return (
     <>
       <div className="min-h-screen">
@@ -41,7 +43,7 @@ export default function AuthenticatedClientLayout({ children }) {
               </div>
 
               <div className="flex items-center space-x-2">
-                {/* <UserNav /> */}
+                <UserNav  data={data}/>
                 <ThemeToggle />
               </div>
             </div>

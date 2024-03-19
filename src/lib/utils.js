@@ -8,3 +8,4 @@ export function cn(...inputs) {
 export const getCharacterValidationError = (str) => {
   return `must have at least 1 ${str} character`;
 };
+
